@@ -15,17 +15,23 @@ const nav = ({ searchData }) => {
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to="/vaporWave" onClick={() => searchData("Vapor Wave")}>
+          <NavLink
+            to="/search/vaporWave"
+            onClick={() => searchData("Vapor Wave")}
+          >
             Vapor Wave
           </NavLink>
         </li>
         <li>
-          <NavLink to="/80s" onClick={() => searchData("Eighties")}>
+          <NavLink to="/search/80s" onClick={() => searchData("Eighties")}>
             80's
           </NavLink>
         </li>
         <li>
-          <NavLink to="/chillHop" onClick={() => searchData("Chill Hop")}>
+          <NavLink
+            to="/search/chillHop"
+            onClick={() => searchData("Chill Hop")}
+          >
             Chill Hop
           </NavLink>
         </li>
