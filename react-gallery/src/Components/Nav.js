@@ -1,6 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Navigation for the application
+ * @component Nav
+ *
+ */
 const nav = (props) => {
   console.log(props);
   //creat array of options
@@ -11,18 +16,18 @@ const nav = (props) => {
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to="/cats" onClick={console.log("hello")}>
-            Cats
+          <NavLink to="/vaporWave" onClick={console.log("hello")}>
+            Vapor Wave
           </NavLink>
         </li>
         <li>
-          <NavLink to="/dogs" onClick={console.log("hello")}>
-            Dogs
+          <NavLink to="/80s" onClick={console.log("hello")}>
+            80's
           </NavLink>
         </li>
         <li>
-          <NavLink to="/computers" onClick={console.log("hello")}>
-            Computers
+          <NavLink to="/retro" onClick={console.log("hello")}>
+            Retro
           </NavLink>
         </li>
       </ul>
