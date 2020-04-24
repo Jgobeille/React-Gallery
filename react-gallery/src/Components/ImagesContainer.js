@@ -1,41 +1,46 @@
 import React from "react";
+import Image from "./Image";
+import NoResults from "./NoResults";
+import Loader from "./Loader";
 
-const Images = () => {
-  return (
-    <div className="photo-container">
-      <h2 className="future glow">Results</h2>
-      <ul>
-        <li>
-          <img
-            src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://farm5.staticflickr.com/4342/36338751244_316b6ee54b.jpg"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://farm5.staticflickr.com/4343/37175099045_0d3a249629.jpg"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg"
-            alt=""
-          />
-        </li>
-        <li className="not-found">
-          <h3 className="future glow">No Results Found</h3>
-          <p>You search did not return any results. Please try again.</p>
-        </li>
-      </ul>
-    </div>
-  );
+const Images = (props) => {
+  console.log(props);
+  const results = props.images;
+  let imagesVar;
+  let url;
+
+  //maps over the data and creates a gif component each time through the array
+  if (results.length <= 0) {
+    imagesVar = <NoResults />;
+  } else {
+    imagesVar = results.map(
+      (image) => (
+        //formats url
+        (url = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`),
+        (<Image url={url} key={image.id} />)
+      )
+    );
+  }
+
+  // if loading state is false then show loading paragraph tag
+  if (props.loading) {
+    return <Loader />;
+  }
+
+  if (results.length <= 0) {
+    return (
+      <div className="photo-container">
+        <ul>{imagesVar}</ul>
+      </div>
+    );
+  } else {
+    return (
+      <div className="photo-container">
+        <h2 className="future glow">Results</h2>
+        <ul>{imagesVar}</ul>
+      </div>
+    );
+  }
 };
 
 export default Images;

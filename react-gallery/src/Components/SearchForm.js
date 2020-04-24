@@ -1,24 +1,45 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 /**
  * Search Form allow user to search for images
  * @component searchForm
  *
  */
-export default class SearchForm extends Component {
+class SearchForm extends Component {
   state = {
     searchText: "",
   };
 
+  onSearchChange = (e) => {
+    const value = e.target.value;
+    this.setState({
+      searchText: value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let input = this.query.value;
+    let path = `search/${input}`;
+    this.props.history.replace("");
+    console.log(path);
+    //appends the path to the history
+    this.props.history.push(path);
+    this.props.onSearch(input);
+    e.currentTarget.reset();
+    console.log(this.props);
+  };
+
   render() {
     return (
-      <form className="search-form" onSubmit={console.log("")}>
+      <form className="search-form" onSubmit={this.handleSubmit}>
         <input
           type="search"
           name="search"
           placeholder="Search for your A E S T H E T I C..."
-          onChange={console.log("")}
-          ref={console.log("")}
+          onChange={this.onSearchChange}
+          ref={(input) => (this.query = input)}
           required
         />
         <button type="submit" className="search-button">
@@ -37,3 +58,5 @@ export default class SearchForm extends Component {
     );
   }
 }
+
+export default withRouter(SearchForm);
