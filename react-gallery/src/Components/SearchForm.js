@@ -12,13 +12,13 @@ export default class SearchForm extends Component {
 
   render() {
     return (
-      <form className="search-form" onSubmit={console.log("hello")}>
+      <form className="search-form" onSubmit={console.log("")}>
         <input
           type="search"
           name="search"
           placeholder="Search for your A E S T H E T I C..."
-          onChange={console.log("hello")}
-          ref={console.log("hello")}
+          onChange={console.log("")}
+          ref={console.log("")}
           required
         />
         <button type="submit" className="search-button">

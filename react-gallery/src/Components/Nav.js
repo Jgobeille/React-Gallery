@@ -6,8 +6,7 @@ import { NavLink } from "react-router-dom";
  * @component Nav
  *
  */
-const nav = (props) => {
-  console.log(props);
+const nav = () => {
   //creat array of options
   //loop over the options
   //pass th results
@@ -16,19 +15,13 @@ const nav = (props) => {
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to="/vaporWave" onClick={console.log("hello")}>
-            Vapor Wave
-          </NavLink>
+          <NavLink to="/vaporWave">Vapor Wave</NavLink>
         </li>
         <li>
-          <NavLink to="/80s" onClick={console.log("hello")}>
-            80's
-          </NavLink>
+          <NavLink to="/80s">80's</NavLink>
         </li>
         <li>
-          <NavLink to="/aesthetic" onClick={console.log("hello")}>
-            Aesthetic
-          </NavLink>
+          <NavLink to="/aesthetic">Aesthetic</NavLink>
         </li>
       </ul>
     </nav>

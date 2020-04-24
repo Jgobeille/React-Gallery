@@ -2,7 +2,7 @@ import React from "react";
 
 const Images = () => {
   return (
-    <div class="photo-container">
+    <div className="photo-container">
       <h2 className="future glow">Results</h2>
       <ul>
         <li>
@@ -29,7 +29,7 @@ const Images = () => {
             alt=""
           />
         </li>
-        <li class="not-found">
+        <li className="not-found">
           <h3 className="future glow">No Results Found</h3>
           <p>You search did not return any results. Please try again.</p>
         </li>
