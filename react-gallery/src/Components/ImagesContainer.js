@@ -2,24 +2,24 @@ import React from "react";
 import Image from "./Image";
 import NoResults from "./NoResults";
 import Loader from "./Loader";
+import { withRouter } from "react-router-dom";
 
 const Images = (props) => {
   console.log(props);
   const results = props.images;
   let imagesVar;
-  let url;
 
   //maps over the data and creates a gif component each time through the array
   if (results.length <= 0) {
     imagesVar = <NoResults />;
   } else {
-    imagesVar = results.map(
-      (image) => (
-        //formats url
-        (url = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`),
-        (<Image url={url} key={image.id} />)
-      )
-    );
+    imagesVar = results.map((image) => (
+      //formats url
+      <Image
+        url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`}
+        key={image.id}
+      />
+    ));
   }
 
   // if loading state is false then show loading paragraph tag

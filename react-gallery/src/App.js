@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Switch,
-  withRouter,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import "./index.css";
 import SearchForm from "./Components/SearchForm";
@@ -49,11 +43,11 @@ class App extends Component {
           <SearchForm onSearch={this.searchQuery} />
           <Nav searchData={this.searchQuery} />
           <Switch>
-            <Route
+            {/* <Route
               exact
               path="/"
               render={() => <Redirect to={"/search/vaporWave"} />}
-            />
+            /> */}
             {/* <Route
               path="/vaporWave"
               render={() => (
@@ -69,6 +63,10 @@ class App extends Component {
               render={() => <Images images={this.state.images} />}
             /> */}
             <Route
+              path="/"
+              render={() => <Images images={this.state.images} />}
+            />
+            <Route
               path="/search/:id"
               render={() => <Images images={this.state.images} />}
             />
@@ -80,4 +78,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;
