@@ -11,7 +11,17 @@ import config from "./config.js";
 const App = (props) => {
   console.log(props);
   return (
-
+    <BrowserRouter>
+      <div className="container">
+        <SearchForm />
+        <Nav />
+        <Route exact path="/" render={() => <Images />} />
+        <Route exact path="/vaporWave" render={() => <Images />} />
+        <Route exact path="/80s" render={() => <Images />} />
+        <Route exact path="/aesthetic" render={() => <Images />} />
+        <Route exact path="/search/:id" render={() => <Images />} />
+      </div>
+    </BrowserRouter>
   );
 };
 

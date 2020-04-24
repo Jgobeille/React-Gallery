@@ -26,8 +26,8 @@ const nav = (props) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/retro" onClick={console.log("hello")}>
-            Retro
+          <NavLink to="/aesthetic" onClick={console.log("hello")}>
+            Aesthetic
           </NavLink>
         </li>
       </ul>
