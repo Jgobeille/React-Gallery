@@ -8,7 +8,6 @@ import ImageContainer from "./Components/ImagesContainer";
 import NotFound from "./Components/PageNotFound";
 import axios from "axios";
 import apiKey from "./config.js";
-import Loader from "./Components/Loader";
 
 //App Components
 class App extends Component {
@@ -25,11 +24,13 @@ class App extends Component {
     } else {
       pathName = pathName.substring(1);
     }
+    this.state.loading = true;
 
     this.searchQuery(pathName);
   }
 
   componentDidUpdate(prevProps) {
+    this.state.loading = true;
     let pathName = prevProps.history.location.pathname;
     if (pathName.includes("/search")) {
       pathName = pathName.substring(8);
@@ -64,7 +65,6 @@ class App extends Component {
       <div className="container">
         <SearchForm onSearch={this.searchQuery} />
         <Nav />
-        {this.state.loading ? <Loader /> : null}
         <Switch>
           <Route exact path="/" render={() => <Redirect to={"/vaporWave"} />} />
           <Route
@@ -73,6 +73,7 @@ class App extends Component {
             render={(props) => (
               <ImageContainer
                 {...props}
+                loading={this.state.loading}
                 name={this.state.input}
                 images={this.state.images}
               />
@@ -84,6 +85,7 @@ class App extends Component {
             render={(props) => (
               <ImageContainer
                 {...props}
+                loading={this.state.loading}
                 name={this.state.input}
                 images={this.state.images}
               />
@@ -95,6 +97,7 @@ class App extends Component {
             render={(props) => (
               <ImageContainer
                 {...props}
+                loading={this.state.loading}
                 name={this.state.input}
                 images={this.state.images}
               />
@@ -107,6 +110,7 @@ class App extends Component {
               <ImageContainer
                 {...props}
                 loading={this.state.loading}
+                name={this.state.input}
                 images={this.state.images}
               />
             )}

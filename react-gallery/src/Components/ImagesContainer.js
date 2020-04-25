@@ -2,6 +2,7 @@ import React from "react";
 import Image from "./Image";
 import NoResults from "./NoResults";
 import PropTypes from "prop-types";
+import Loader from "./Loader";
 
 /**
  * Takes query, adds to string, creates URL
@@ -10,29 +11,27 @@ import PropTypes from "prop-types";
  * @component Imagescontainer
  *
  */
-const ImagesContainer = ({ images, name }) => {
+const ImagesContainer = ({ images, name, loading }) => {
   const results = images;
   let imagesVar;
 
   //maps over the data and creates a gif component each time through the array
-  if (results.length < 0) {
-    imagesVar = <NoResults />;
-  } else {
-    imagesVar = results.map((image) => (
-      //pushs url data to image container
-      <Image
-        url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`}
-        key={image.id}
-      />
-    ));
+
+  imagesVar = results.map((image) => (
+    //pushs url data to image container
+    <Image
+      url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`}
+      key={image.id}
+    />
+  ));
+
+  if (loading) {
+    return <Loader />;
   }
 
   if (results.length <= 0) {
-    return (
-      <div className="photo-container">
-        <ul>{imagesVar}</ul>
-      </div>
-    );
+    console.log("show");
+    return <NoResults />;
   } else {
     return (
       <div className="photo-container">
@@ -44,7 +43,7 @@ const ImagesContainer = ({ images, name }) => {
 };
 
 ImagesContainer.propTypes = {
-  images: PropTypes.object,
+  images: PropTypes.array,
   name: PropTypes.string,
 };
 
