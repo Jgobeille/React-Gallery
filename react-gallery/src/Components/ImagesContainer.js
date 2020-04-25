@@ -30,7 +30,6 @@ const ImagesContainer = ({ images, name, loading }) => {
   }
 
   if (results.length <= 0) {
-    console.log("show");
     return <NoResults />;
   } else {
     return (

@@ -24,20 +24,20 @@ class App extends Component {
     } else {
       pathName = pathName.substring(1);
     }
-    this.state.loading = true;
+    this.setState({
+      loading: true,
+    });
 
     this.searchQuery(pathName);
   }
 
   componentDidUpdate(prevProps) {
-    this.state.loading = true;
     let pathName = prevProps.history.location.pathname;
     if (pathName.includes("/search")) {
       pathName = pathName.substring(8);
     } else {
       pathName = pathName.substring(1);
     }
-
     if (pathName !== this.state.input) {
       this.searchQuery(pathName);
     }
