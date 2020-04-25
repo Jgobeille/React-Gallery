@@ -15,7 +15,7 @@ const nav = () => {
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to="/vaporWave">Vapor Wave</NavLink>
+          <NavLink to="/vaporWave">VaporWave</NavLink>
         </li>
         <li>
           <NavLink to="/80s">80's</NavLink>
