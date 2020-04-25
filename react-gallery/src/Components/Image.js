@@ -1,6 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
+/**
+ * creates each individual image
+ *
+ * @component Image
+ *
+ */
 const Image = ({ url }) => {
   return (
     <li>

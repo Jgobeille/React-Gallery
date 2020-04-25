@@ -22,13 +22,12 @@ class SearchForm extends Component {
     e.preventDefault();
     let input = this.query.value;
     let path = `search/${input}`;
+    //sets history name to empty string before adding newhistory
     this.props.history.replace("");
-    console.log(path);
     //appends the path to the history
     this.props.history.push(path);
     this.props.onSearch(input);
     e.currentTarget.reset();
-    console.log(this.props);
   };
 
   render() {

@@ -1,5 +1,11 @@
-import React from 'react';
+import React from "react";
 
+/**
+ * Loader animation
+ *
+ * @component Loader
+ *
+ */
 const Loader = () => (
   <div className="loader">
     <svg className="svg">

@@ -1,5 +1,11 @@
-import React from 'react';
+import React from "react";
 
+/**
+ * No Results component
+ *
+ * @component NoResults
+ *
+ */
 const noResults = () => {
   return (
     <div className="not-found">

@@ -1,6 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const noResults = () => {
+/**
+ * NoResults information
+ *
+ * @component NoResults
+ *
+ */
+const NoResults = () => {
   return (
     <div className="404">
       <h1 className="future glow">404</h1>
@@ -9,4 +15,4 @@ const noResults = () => {
   );
 };
 
-export default noResults;
+export default NoResults;
