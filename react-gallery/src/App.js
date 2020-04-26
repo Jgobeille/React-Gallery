@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 
 import "./index.css";
@@ -10,11 +10,11 @@ import axios from "axios";
 import apiKey from "./config.js";
 
 //App Components
-class App extends Component {
+class App extends PureComponent {
   state = {
     images: [],
-    Loading: true,
     input: "",
+    loading: true,
   };
 
   componentDidMount() {
@@ -24,24 +24,28 @@ class App extends Component {
     } else {
       pathName = pathName.substring(1);
     }
-    this.setState({
-      loading: true,
-    });
 
     this.searchQuery(pathName);
   }
 
   componentDidUpdate(prevProps) {
     let pathName = prevProps.history.location.pathname;
+
     if (pathName.includes("/search")) {
       pathName = pathName.substring(8);
     } else {
       pathName = pathName.substring(1);
     }
+
     if (pathName !== this.state.input) {
+      this.setState({
+        loading: true,
+      });
       this.searchQuery(pathName);
     }
   }
+
+  componentWillUnmount() {}
 
   searchQuery = (input) => {
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`;
@@ -59,6 +63,12 @@ class App extends Component {
         console.log("error fetching data", error);
       });
   };
+
+  // setState = () => {
+  //   this.setState({
+  //     loading: true,
+  //   });
+  // };
 
   render() {
     return (

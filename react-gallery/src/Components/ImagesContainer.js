@@ -26,6 +26,7 @@ const ImagesContainer = ({ images, name, loading }) => {
   ));
 
   if (loading) {
+    console.log();
     return <Loader />;
   }
 
