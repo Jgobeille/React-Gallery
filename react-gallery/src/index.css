@@ -4,7 +4,8 @@ body {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   color: #3f4850;
-  background: url("https://treehouseproject.s3.amazonaws.com/Unit+7+Project/12-124273_vaporwave-wallpaper-twitter-pink.jpg") no-repeat center center fixed;
+  background: url("https://treehouseproject.s3.amazonaws.com/Unit+7+Project/12-124273_vaporwave-wallpaper-twitter-pink.jpg")
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -162,7 +163,6 @@ input {
 }
 
 @keyframes animate {
-
   0%,
   100% {
     stroke-dashoffset: 440;
