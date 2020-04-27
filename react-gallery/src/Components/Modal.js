@@ -22,7 +22,9 @@ export default class ModalContainer extends Component {
           </button>
           <div className="modal-info-container">
             <img className="modal-img" src={this.props.src} alt={"an image"} />
-            <p>{this.props.title}</p>
+            <div className="modal-text">
+              <p>{this.props.title}</p>
+            </div>
           </div>
         </div>
       </div>

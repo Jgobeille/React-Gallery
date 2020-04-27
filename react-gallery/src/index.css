@@ -72,14 +72,6 @@ input {
   background-color: #b967ff;
 }
 
-.photo-container ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  -ms-align-items: flex-start;
-  align-items: flex-start;
-}
-
 .photo-container ul li {
   z-index: 1;
   width: 220px;
@@ -104,6 +96,16 @@ input {
 
 .photo-container .not-found {
   width: 100%;
+}
+
+@media only screen and (min-width: 473px) {
+  .photo-container ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+  }
 }
 
 @media only screen and (max-width: 767px) {
