@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Modal from "./Modal";
 
 /**
  * creates each individual image
@@ -7,16 +8,41 @@ import PropTypes from "prop-types";
  * @component Image
  *
  */
-const Image = ({ url }) => {
-  return (
-    <li>
-      <img src={url} alt=" " />
-    </li>
-  );
-};
+export default class Image extends Component {
+  state = {
+    show: false,
+  };
+
+  showModal = () => {
+    this.setState({
+      show: !this.state.show,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <li>
+          <img
+            className="image"
+            src={this.props.url}
+            alt=" "
+            onClick={() => this.showModal()}
+          />
+        </li>
+        <span>
+          <Modal
+            show={this.state.show}
+            onClose={this.showModal}
+            src={this.props.url}
+            title={this.props.title}
+          />
+        </span>
+      </div>
+    );
+  }
+}
 
 Image.propTypes = {
   url: PropTypes.string,
 };
-
-export default Image;

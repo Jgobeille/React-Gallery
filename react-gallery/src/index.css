@@ -81,6 +81,7 @@ input {
 }
 
 .photo-container ul li {
+  z-index: 1;
   width: 220px;
   height: 165px;
   overflow: hidden;
@@ -88,14 +89,16 @@ input {
   box-shadow: 0px 11px 16px 1px rgba(0, 0, 0, 0.75);
 }
 
-.photo-container ul img {
+.photo-container ul .image {
+  cursor: pointer;
+  z-index: 1;
   width: 100%;
   height: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
 }
 
-.photo-container li:hover img {
+.photo-container li:hover .image {
   transform: scale(1.65);
 }
 
@@ -228,41 +231,45 @@ li a {
 
 /* Modal window for the images */
 .modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 1);
 }
 
 .modal {
   position: relative;
-  width: 95%;
-  max-width: 420px;
-  min-height: 415px;
-  margin: 10px auto auto;
-  padding-bottom: 15px;
-  background: #e2f3f5;
-  border-radius: 0.25em;
-  border: 1px solid rgba(100, 100, 100, 0.3);
-  transition: 0.4s ease-out;
+  margin: 0 auto;
 }
 
 .modal-close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 0px;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.9);
-  background: #0e153a;
+  background: #eb219b;
   outline: none;
   border-radius: 0.25em;
   border: 1px solid rgba(50, 50, 50, 0.3);
 }
 
 .modal-img {
-  width: 150px;
+  width: 400px;
+  height: 400px;
   margin-top: 35px;
-  border-radius: 50%;
+}
+
+.modal-info-container p {
+  color: #eb219b;
+  font-family: "Mr Dafoe";
+  letter-spacing: 2px;
+  font-size: 20px;
+  white-space: initial;
 }

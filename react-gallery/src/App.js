@@ -15,6 +15,7 @@ class App extends PureComponent {
     images: [],
     input: "",
     loading: true,
+    titles: [],
   };
 
   componentDidMount() {
@@ -49,10 +50,10 @@ class App extends PureComponent {
 
   searchQuery = (input) => {
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`;
-
     axios
       .get(url)
       .then((res) => {
+        console.log(res);
         this.setState({
           images: res.data.photos.photo,
           loading: false,
