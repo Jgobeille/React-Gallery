@@ -3,7 +3,6 @@ import Image from "./Image";
 import NoResults from "./NoResults";
 import PropTypes from "prop-types";
 import Loader from "./Loader";
-import Modal from "./Modal";
 
 /**
  * Takes query, adds to string, creates URL
