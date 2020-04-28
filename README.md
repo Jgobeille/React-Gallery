@@ -157,7 +157,7 @@ Data Fetching using Axios
 
 This snippet of code uses the users input to make a call to Flickr's server to fetch data based on their search input
 
-```
+```javaScript
   searchQuery = (input) => { //Input being whatever the user typed in
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`;
     axios
@@ -178,7 +178,7 @@ This snippet of code uses the users input to make a call to Flickr's server to f
 
 This snippet uses Reacts life-cycle methods to properly update the projects state. When the app first loads componentDidMount will mount the search component and update the state. Then after each search, ComponentDidUpdate will update the state once again to accurately show the searched images.
 
-```
+```javaScript
 
   componentDidMount() {
     let pathName = this.props.history.location.pathname;
@@ -212,7 +212,7 @@ This snippet uses Reacts life-cycle methods to properly update the projects stat
 
 React Router
 
-```
+```javaScript
 //App.js Routing
 
 <Switch>
@@ -288,7 +288,7 @@ React Router
 
 A reusable component in app that creates the image container for each image
 
-```
+```javaScript
 import React from "react";
 import Image from "./Image";
 import NoResults from "./NoResults";
