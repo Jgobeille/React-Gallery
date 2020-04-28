@@ -6,7 +6,7 @@
 
 In the projects root directory you can run:
 
-### npm install
+### `npm install`
 
 This is download all the necessary dependencies to run the project.
 
@@ -14,11 +14,13 @@ This is download all the necessary dependencies to run the project.
 
 In the terminal, move to the project folder with:
 
-### cd react-gallery
+### `cd react-gallery`
 
 Then:
 
-### npm start
+### `npm start`
+
+---
 
 ## For more information on different scripts, see below.
 
