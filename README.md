@@ -20,7 +20,7 @@ In the terminal, move to the project folder with:
 You will need to supply yourself your own API key.
 Please go to https://www.flickr.com/services/apps/create/ to create your own API key.
 
-Then insert your API key into the searchQuery function
+Then insert your API key into the url variable inside of the SearchQuery function
 ```JavaScript
 const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${YOUR_API_KEY}&tags=${input}&per_page=24&page=1&format=json&nojsoncallback=1`;
 ```
